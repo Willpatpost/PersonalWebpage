@@ -150,6 +150,12 @@ section {
 }
 
 /* Project Card Styling */
+
+#projects {
+    padding: 60px 0; /* Match the padding with other sections */
+    margin: 0; /* Ensure no extra margin is added */
+}
+
 .project-card {
     background-color: var(--background-color);
     border: 1px solid #ddd;
