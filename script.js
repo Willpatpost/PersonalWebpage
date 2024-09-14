@@ -45,11 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function toggleProjectDetails(button) {
-    const details = button.nextElementSibling;
-    if (details) {
-        details.classList.toggle('hidden');
-    } else {
-        console.error("Details section not found");
-    }
+// Scroll to Top Button
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
