@@ -71,13 +71,12 @@ h1, h2 {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: transform 0.5s ease-out;
 }
 
 .cta-button:hover {
-    background-color: var(--button-hover-bg);
-    transform: scale(1.05);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: translateY(10px); /* Slide down */
+    transition: transform 0.3s ease;
 }
 
 .theme-switch {
@@ -87,8 +86,55 @@ h1, h2 {
     font-size: 14px;
 }
 
-.theme-switch input[type="checkbox"] {
-    margin-right: 10px;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--button-bg-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 /* Navigation */
@@ -150,12 +196,6 @@ section {
 }
 
 /* Project Card Styling */
-
-#projects {
-    padding: 60px 0; /* Match the padding with other sections */
-    margin: 0; /* Ensure no extra margin is added */
-}
-
 .project-card {
     background-color: var(--background-color);
     border: 1px solid #ddd;
@@ -188,19 +228,37 @@ section {
     background-color: var(--button-hover-bg);
 }
 
-.project-card.active .project-details {
-    display: block;
-}
-
 .hidden {
     display: none;
 }
 
-/* Button Hover Effects */
-.cta-button:hover, .project-button:hover {
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: var(--button-bg-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#backToTop:hover {
     background-color: var(--button-hover-bg);
-    transform: scale(1.05);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
 
 /* Parallax and Scroll Animations */
@@ -224,19 +282,9 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 36px;
