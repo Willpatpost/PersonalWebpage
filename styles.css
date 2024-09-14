@@ -79,6 +79,7 @@ h1, h2 {
     transition: transform 0.3s ease;
 }
 
+/* Theme Slider */
 .theme-switch {
     position: absolute;
     top: 20px;
@@ -131,10 +132,14 @@ input:checked + .slider:before {
 
 .slider.round {
     border-radius: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
 }
 
-.slider.round:before {
-    border-radius: 50%;
+.slider .sun, .slider .moon {
+    font-size: 12px;
 }
 
 /* Navigation */
@@ -204,6 +209,7 @@ section {
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 5px;
+    position: relative;
 }
 
 .project-card:hover {
@@ -232,6 +238,16 @@ section {
     display: none;
 }
 
+.down-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: var(--text-color);
+    pointer-events: none;
+}
+
 /* Back to Top Button */
 #backToTop {
     position: fixed;
@@ -243,6 +259,7 @@ section {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 1001;
 }
 
 #backToTop:hover {
