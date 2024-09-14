@@ -45,12 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Toggle project details visibility
 function toggleProjectDetails(button) {
     const details = button.nextElementSibling;
-    if (details.classList.contains('hidden')) {
-        details.classList.remove('hidden');
-    } else {
-        details.classList.add('hidden');
-    }
+    details.classList.toggle('hidden'); // Toggles 'hidden' class with one command
 }
