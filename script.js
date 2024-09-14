@@ -47,5 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleProjectDetails(button) {
     const details = button.nextElementSibling;
-    details.classList.toggle('hidden'); // Toggles 'hidden' class with one command
+    if (details) {
+        details.classList.toggle('hidden');
+    } else {
+        console.error("Details section not found");
+    }
 }
