@@ -22,16 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Add scroll animations (using IntersectionObserver)
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries, observer) => {
+    // Scroll-triggered animations for slide-in sections
+    const slideSections = document.querySelectorAll('.slide-in');
+    const slideObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('active');
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.2 });
 
-    sections.forEach(section => observer.observe(section));
+    slideSections.forEach(section => slideObserver.observe(section));
+
+    // Interactive project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const details = card.querySelector('.project-details');
+            details.classList.toggle('hidden');
+        });
+    });
 });
