@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Smooth slide down transition for Learn More button
+    const learnMoreButton = document.querySelector('.cta-button');
+    learnMoreButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('#about').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
     // Scroll-triggered animations for slide-in sections
     const slideSections = document.querySelectorAll('.slide-in');
     const slideObserver = new IntersectionObserver((entries, observer) => {
@@ -43,9 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
             details.classList.toggle('hidden');
         });
     });
-});
 
-// Scroll to Top Button
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+    // Scroll to Top Button
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.getElementById('backToTop').addEventListener('click', scrollToTop);
+});
