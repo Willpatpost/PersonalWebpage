@@ -187,6 +187,10 @@ section {
     display: block;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Button Hover Effects */
 .cta-button:hover, .project-button:hover {
     background-color: var(--button-hover-bg);
