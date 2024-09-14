@@ -100,6 +100,7 @@ h1, h2 {
     height: 0;
 }
 
+/* Slider Circle */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -108,17 +109,19 @@ h1, h2 {
     right: 0;
     bottom: 0;
     background-color: #ccc;
+    border-radius: 34px; /* Rounded slider */
     transition: .4s;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 26px; /* Smaller size */
+    width: 26px;  /* Circular size */
     left: 4px;
     bottom: 4px;
     background-color: white;
+    border-radius: 50%;  /* Makes it circular */
     transition: .4s;
 }
 
@@ -205,6 +208,7 @@ section {
     background-color: var(--background-color);
     border: 1px solid #ddd;
     padding: 20px;
+    margin: 0; /* Removed margin to fix indentation */
     margin-bottom: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
