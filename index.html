@@ -19,8 +19,10 @@
         <a href="#about" class="cta-button">Learn More</a>
     </div>
     <div class="theme-switch">
-        <input type="checkbox" id="theme-toggle">
-        <label for="theme-toggle">Day/Night Mode</label>
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
     </div>
 </header>
 
@@ -44,27 +46,22 @@
     </section>
 
     <!-- Projects Section -->
-<section id="projects" class="container">
-    <h2>Projects</h2>
-    
-    <!-- Sliding Puzzle Project -->
-    <div class="project-card">
-        <h3>Sliding Puzzle Game</h3>
-        <p>A Java-based sliding puzzle game with multiple difficulty levels and stats tracking. Click to learn more...</p>
-        <button onclick="toggleProjectDetails(this)">Learn More</button>
-        <div class="project-details hidden">
-            <p>This Java-based sliding puzzle game allows players to choose difficulty levels from 3x3 to 7x7. The game tracks time and moves, allowing players to challenge themselves and improve their scores.</p>
-            <a href="https://github.com/Willpatpost/William-Poston/tree/main/Projects/Sliding%20Puzzle/Code/Main" target="_blank" class="btn">View Source</a>
-            <a href="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Sliding%20Puzzle.jar" target="_blank" class="btn">Download JAR File</a>
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        
+        <!-- Sliding Puzzle Project -->
+        <div class="project-card">
+            <h3>Sliding Puzzle Game</h3>
+            <p>A Java-based sliding puzzle game with multiple difficulty levels and stats tracking. Click to learn more...</p>
+            <div class="project-details hidden">
+                <p>This Java-based sliding puzzle game allows players to choose difficulty levels from 3x3 to 7x7. The game tracks time and moves, allowing players to challenge themselves and improve their scores.</p>
+                <a href="https://github.com/Willpatpost/William-Poston/tree/main/Projects/Sliding%20Puzzle/Code/Main" target="_blank" class="btn">View Source</a>
+                <a href="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Sliding%20Puzzle.jar" target="_blank" class="btn">Download JAR File</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Project 2 -->
-
-    <!-- Project 3 -->
-
-    <!-- Add more projects similarly -->
-</section>
+        <!-- More projects can be added similarly -->
+    </section>
 
     <!-- Resume Section -->
     <section id="resume">
@@ -79,6 +76,9 @@
         <!-- Contact details and social links go here -->
     </section>
 </div>
+
+<!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTop">Back to Top</button>
 
 <!-- Footer -->
 <footer>
