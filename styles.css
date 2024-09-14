@@ -149,22 +149,38 @@ section {
     transform: translateY(0);
 }
 
-/* Project Cards */
+/* Project Card Styling */
 .project-card {
     background-color: var(--background-color);
     border: 1px solid #ddd;
     padding: 20px;
-    cursor: pointer;
+    margin-bottom: 20px;
     transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
 .project-details {
     display: none;
+    margin-top: 10px;
+}
+
+.project-details .btn {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.project-details .btn:hover {
+    background-color: var(--button-hover-bg);
 }
 
 .project-card.active .project-details {
