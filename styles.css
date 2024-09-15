@@ -196,11 +196,6 @@ section {
     color: var(--text-color);
 }
 
-#projects {
-    margin: 0 auto; /* Center alignment */
-    width: 100%; /* Ensure consistent width */
-}
-
 /* Scroll-triggered Animations */
 .slide-in {
     opacity: 0;
