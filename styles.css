@@ -196,6 +196,10 @@ section {
     color: var(--text-color);
 }
 
+#projects {
+    margin-left: 0px;
+}
+
 /* Scroll-triggered Animations */
 .slide-in {
     opacity: 0;
