@@ -184,6 +184,7 @@ nav a:hover {
 section {
     padding: 60px 0;
     min-height: 50vh;
+    scroll-margin-top: 80px; /* Adjust this to match your header height */
 }
 
 #about, #projects, #resume, #contact {
@@ -192,10 +193,9 @@ section {
 }
 
 #projects {
-    margin-top: 100px; /* Adjusted margin to create more space */
-    padding-top: 20px; /* Optional, but ensures space within the section */
-    scroll-margin-top: 120px; /* Increased to match other sections */
-    padding-side: 0px;
+    margin-top: 0px; /* Keep margin consistent with other sections */
+    padding: 60px 0; /* Make padding consistent */
+    scroll-margin-top: 80px; /* Adjust this to match the height of the nav bar */
 }
 
 /* Scroll-triggered Animations */
