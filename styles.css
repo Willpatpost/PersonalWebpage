@@ -191,6 +191,11 @@ section {
     color: var(--text-color);
 }
 
+#projects {
+    padding: 0; /* Ensure no extra padding */
+    margin: 0;  /* Remove any margin */
+}
+
 /* Scroll-triggered Animations */
 .slide-in {
     opacity: 0;
@@ -208,8 +213,7 @@ section {
     background-color: var(--background-color);
     border: 1px solid #ddd;
     padding: 20px;
-    margin: 0; /* Removed margin to fix indentation */
-    margin-bottom: 20px;
+    margin: 0 auto 20px; /* Centering and ensuring no extra margin */
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 5px;
