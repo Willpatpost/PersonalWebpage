@@ -194,7 +194,8 @@ section {
 #projects {
     margin-top: 100px; /* Adjusted margin to create more space */
     padding-top: 20px; /* Optional, but ensures space within the section */
-    scroll-margin-top: 150px; /* Increased to match other sections */
+    scroll-margin-top: 120px; /* Increased to match other sections */
+    padding-side: 0px;
 }
 
 /* Scroll-triggered Animations */
