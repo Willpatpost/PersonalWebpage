@@ -194,8 +194,8 @@ section {
 
 #projects {
     margin-top: 0px; /* Keep margin consistent with other sections */
-    padding: 0px; /* Make padding consistent */
-    scroll-margin-top: 80px; /* Adjust this to match the height of the nav bar */
+    padding: 60px; /* Make padding consistent */
+    margin-left: 0px;
 }
 
 /* Scroll-triggered Animations */
