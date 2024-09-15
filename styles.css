@@ -192,8 +192,8 @@ section {
 }
 
 #projects {
-    padding: 0; /* Ensure no extra padding */
-    margin-top: 60px;  /* Remove any margin */
+    padding: 60px; /* Ensure no extra padding */
+    margin-top: 0px;  /* Remove any margin */
     margin-left: 0; /* Removes indentation */
     padding-left: 0; /* Ensures no extra padding */
 }
