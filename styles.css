@@ -189,10 +189,10 @@ section {
 #about, #projects, #resume, #contact {
     background-color: var(--background-color);
     color: var(--text-color);
+    margin-top: 80px;  /* Remove any margin */
 }
 
 #projects {
-    margin-top: 60px;  /* Remove any margin */
     margin-left: 0; /* Removes indentation */
     padding-left: 0; /* Ensures no extra padding */
 }
