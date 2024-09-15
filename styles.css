@@ -142,7 +142,7 @@ input:checked + .slider:before {
 }
 
 .slider .sun, .slider .moon {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 /* Navigation */
@@ -192,8 +192,7 @@ section {
 }
 
 #projects {
-    padding: 60px; /* Ensure no extra padding */
-    margin-top: 0px;  /* Remove any margin */
+    margin-top: 60px;  /* Remove any margin */
     margin-left: 0; /* Removes indentation */
     padding-left: 0; /* Ensures no extra padding */
 }
