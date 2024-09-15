@@ -192,10 +192,9 @@ section {
 }
 
 #projects {
-    margin-top: 60px;  /* Remove any margin */
-    margin-left: 0; /* Removes indentation */
-    padding-left: 0; /* Ensures no extra padding */
-    scroll-margin-top: 120px; /* Creates space when scrolling to the section */
+    margin-top: 100px; /* Adjusted margin to create more space */
+    padding-top: 20px; /* Optional, but ensures space within the section */
+    scroll-margin-top: 150px; /* Increased to match other sections */
 }
 
 /* Scroll-triggered Animations */
