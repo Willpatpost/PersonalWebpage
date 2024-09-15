@@ -195,7 +195,7 @@ section {
     margin-top: 60px;  /* Remove any margin */
     margin-left: 0; /* Removes indentation */
     padding-left: 0; /* Ensures no extra padding */
-    scroll-margin-top: 80px; /* Creates space when scrolling to the section */
+    scroll-margin-top: 1600px; /* Creates space when scrolling to the section */
 }
 
 /* Scroll-triggered Animations */
