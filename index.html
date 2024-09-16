@@ -44,13 +44,13 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>    Hello, world! My name is William Patric Poston, a senior at Old Dominion University pursuing a degree in Computer Science with a minor in Data Science. My passion for technology and innovation has driven me to dive deep into programming, algorithms, and artificial intelligence. I am constantly learning and exploring how software can be used to solve real-world problems.</p>
+        <p>Hello, world! My name is William Patric Poston, a senior at Old Dominion University pursuing a degree in Computer Science with a minor in Data Science. My passion for technology and innovation has driven me to dive deep into programming, algorithms, and artificial intelligence. I am constantly learning and exploring how software can be used to solve real-world problems.</p>
 
-        <p>    Outside of my academic pursuits, I spend a lot of time working on personal programming projects, honing my skills through solving LeetCode challenges, and staying active. Some of my favorite activities include mountainous hiking, playing soccer, and spending time with friends. These hobbies provide a nice balance to my professional life, allowing me to stay energized and creative.</p>
+        <p>Outside of my academic pursuits, I spend a lot of time working on personal programming projects, honing my skills through solving LeetCode challenges, and staying active. Some of my favorite activities include mountainous hiking, playing soccer, and spending time with friends. These hobbies provide a nice balance to my professional life, allowing me to stay energized and creative.</p>
 
-        <p>    In terms of achievements, I am proud to have been a part of and won the Cyber INNOVATE 2022 competition. This experience strengthened my teamwork and problem-solving abilities, pushing me to think critically and develop efficient solutions under pressure.</p>
+        <p>In terms of achievements, I am proud to have been a part of and won the Cyber INNOVATE 2022 competition. This experience strengthened my teamwork and problem-solving abilities, pushing me to think critically and develop efficient solutions under pressure.</p>
 
-        <p>    Looking forward, my long-term goal is to establish myself as a software engineer, focusing on either quantum computing or the finance sector. Both of these fields excite me due to their complexity and potential for impactful innovation. Whether it’s building full-stack applications or engineering new computational systems, I am eager to contribute to cutting-edge technologies that shape the future.</p>
+        <p>Looking forward, my long-term goal is to establish myself as a software engineer, focusing on either quantum computing or the finance sector. Both of these fields excite me due to their complexity and potential for impactful innovation. Whether it’s building full-stack applications or engineering new computational systems, I am eager to contribute to cutting-edge technologies that shape the future.</p>
     </section>
 
     <!-- Projects Section -->
@@ -63,8 +63,7 @@
             <p>A Java-based sliding puzzle game with multiple difficulty levels and stats tracking. Click to learn more...</p>
             <div class="project-details hidden">
                 <p>This Java-based sliding puzzle game allows players to choose difficulty levels from 3x3 to 7x7. The game tracks time and moves, allowing players to challenge themselves and improve their scores.</p>
-                <a href="https://github.com/Willpatpost/William-Poston/tree/main/Projects/Sliding%20Puzzle/Code/Main" target="_blank" class="btn">View Source</a>
-                <a href="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Sliding%20Puzzle.jar" target="_blank" class="btn">Download JAR File</a>
+                <button class="btn" onclick="openSlidingPuzzle()">Play Game</button>
             </div>
         </div>
 
@@ -83,6 +82,26 @@
         <p>Feel free to reach out to me via email or connect with me on social media.</p>
         <!-- Contact details and social links go here -->
     </section>
+</div>
+
+<!-- Popup for Sliding Puzzle -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeSlidingPuzzle()">&times;</span>
+        <h3>Sliding Puzzle Game</h3>
+        <label for="size">Choose puzzle size:</label>
+        <select id="size">
+            <option value="3">3x3</option>
+            <option value="4">4x4</option>
+            <option value="5">5x5</option>
+        </select>
+        <button onclick="startGame()">Start Game</button>
+
+        <div id="puzzleContainer" class="puzzle-container"></div>
+        <p>Moves: <span id="moveCounter">0</span></p>
+        <p>Timer: <span id="timer">00:00:00</span></p>
+        <p id="congratulationsMessage" class="hidden">Congratulations! You've solved the puzzle!</p>
+    </div>
 </div>
 
 <!-- Back to Top Button -->
