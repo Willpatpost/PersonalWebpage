@@ -1,4 +1,3 @@
-/* please build */
 /* Base Theme Variables */
 :root {
     --background-color: #f0f0f0;
@@ -61,13 +60,11 @@ h2 {
 .hero h1 {
     font-size: 48px;
     margin: 0;
-    animation: fadeInDown 2s ease-out;
 }
 
 .hero p {
     font-size: 20px;
     margin: 10px 0 20px;
-    animation: fadeInUp 2s ease-out;
 }
 
 .cta-button {
@@ -105,7 +102,6 @@ h2 {
     height: 0;
 }
 
-/* Slider Circle */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -114,19 +110,19 @@ h2 {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    border-radius: 34px; 
+    border-radius: 34px;
     transition: .4s;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px; 
-    width: 26px;  
+    height: 26px;
+    width: 26px;
     left: 4px;
     bottom: 4px;
     background-color: white;
-    border-radius: 50%;  
+    border-radius: 50%;
     transition: .4s;
 }
 
@@ -197,11 +193,6 @@ section {
     color: var(--text-color);
 }
 
-#projects {
-    margin-top: 20px;
-    margin-left: -20px;
-}
-
 /* Scroll-triggered Animations */
 .slide-in {
     opacity: 0;
@@ -252,16 +243,6 @@ section {
     display: none;
 }
 
-.down-arrow {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: var(--text-color);
-    pointer-events: none;
-}
-
 /* Back to Top Button */
 #backToTop {
     position: fixed;
@@ -292,29 +273,7 @@ footer {
     margin-top: auto;
 }
 
-/* Parallax and Scroll Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-/* Popup Styling */
+/* Pop-up for Sliding Puzzle */
 .popup {
     display: none;
     position: fixed;
