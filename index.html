@@ -58,12 +58,18 @@
         <h2>Projects</h2>
         
         <!-- Sliding Puzzle Project -->
-        <div class="project-card">
-            <h3>Sliding Puzzle Game</h3>
-            <p>A Java-based sliding puzzle game with multiple difficulty levels and stats tracking. Click to learn more...</p>
-            <div class="project-details hidden">
-                <p>This Java-based sliding puzzle game allows players to choose difficulty levels from 3x3 to 7x7. The game tracks time and moves, allowing players to challenge themselves and improve their scores.</p>
-                <button class="btn" onclick="openSlidingPuzzle()">Play Game</button>
+        <div class="project">
+            <button class="dropdown-btn" data-target="project1">Sliding Puzzle Game</button>
+            <div id="project1" class="dropdown-container hidden">
+                <div class="project-links">
+                    <button class="play-button" onclick="openSlidingPuzzle()">Play Game</button>
+                    <a href="https://github.com/Willpatpost/William-Poston/tree/main/Projects/Sliding%20Puzzle/Code/Main" target="_blank" class="btn">View Source</a>
+                    <a href="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Sliding%20Puzzle.jar" target="_blank" class="btn">Download JAR File</a>
+                </div>
+                <div class="project-images">
+                    <img src="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Demo%20of%20Sliding%20Puzzle%20Uncompleted.png?raw=true" alt="Sliding Puzzle Game Uncompleted">
+                    <img src="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Demo%20of%20Sliding%20Puzzle%20Completed.png?raw=true" alt="Sliding Puzzle Game Completed">
+                </div>
             </div>
         </div>
 
@@ -88,19 +94,22 @@
 <div id="popup" class="popup">
     <div class="popup-content">
         <span class="close" onclick="closeSlidingPuzzle()">&times;</span>
-        <h3>Sliding Puzzle Game</h3>
-        <label for="size">Choose puzzle size:</label>
+        <h2>Sliding Puzzle Game by William Poston</h2>
+        <label for="size">Select Puzzle Size:</label>
         <select id="size">
             <option value="3">3x3</option>
             <option value="4">4x4</option>
             <option value="5">5x5</option>
+            <option value="6">6x6</option>
+            <option value="7">7x7</option>
         </select>
-        <button onclick="startGame()">Start Game</button>
-
-        <div id="puzzleContainer" class="puzzle-container"></div>
-        <p>Moves: <span id="moveCounter">0</span></p>
-        <p>Timer: <span id="timer">00:00:00</span></p>
-        <p id="congratulationsMessage" class="hidden">Congratulations! You've solved the puzzle!</p>
+        <button onclick="startGame()">Play</button>
+        <div id="gameStats">
+            <p>Time: <span id="timer">00:00:00</span></p>
+            <p>Moves: <span id="moveCounter">0</span></p>
+        </div>
+        <div id="puzzleContainer"></div>
+        <p id="congratulationsMessage" style="display:none;">Congratulations! You finished the puzzle.</p>
     </div>
 </div>
 
