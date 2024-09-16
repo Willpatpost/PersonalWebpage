@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Interactive project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const details = card.querySelector('.project-details');
-            details.classList.toggle('hidden');
+    document.querySelectorAll('.dropdown-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-target');
+            const container = document.getElementById(projectId);
+            container.classList.toggle('hidden');
         });
     });
 
