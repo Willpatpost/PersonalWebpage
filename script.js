@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('backToTop').addEventListener('click', scrollToTop);
 });
 
-// Open and close the sliding puzzle pop-up
+// Ensure no unintended calls to openSlidingPuzzle
 function openSlidingPuzzle() {
     document.getElementById('popup').style.display = 'block';
 }
