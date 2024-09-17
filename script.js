@@ -57,7 +57,7 @@ function closeSlidingPuzzle() {
     clearInterval(interval); // Stop the timer when the popup is closed
 }
 
-// Start the sliding puzzle game (unchanged)
+// Start the sliding puzzle game
 function startGame() {
     size = parseInt(document.getElementById('size').value);
     puzzle = generatePuzzle(size);
