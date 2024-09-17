@@ -43,7 +43,9 @@ function scrollToTop() {
 
 // Open and close the sliding puzzle pop-up
 function openSlidingPuzzle() {
-    document.getElementById('popup').style.display = 'block';
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex'; // Ensure it's centered by using flex display
+    popup.scrollIntoView({ behavior: 'smooth' }); // Ensure the pop-up scrolls into view smoothly
 }
 
 function closeSlidingPuzzle() {
