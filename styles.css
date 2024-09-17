@@ -58,9 +58,30 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Ensuring dark mode popup background and text color change */
 [data-theme="dark"] .popup-content {
-    background-color: var(--popup-bg-color) !important; /* Force darker background */
-    color: var(--popup-text-color) !important; /* Force lighter text color */
+    background-color: #2c2c2c !important; /* Dark background */
+    color: #f5f5f5 !important; /* Lighter text */
+}
+
+.popup-content h2, 
+.popup-content p, 
+.popup-content label, 
+.popup-content select, 
+.popup-content button {
+    color: inherit;
+}
+
+/* Adjust the button in the popup for night mode */
+[data-theme="dark"] .popup-content button {
+    background-color: #444 !important; /* Darker button */
+    color: #f5f5f5 !important; /* Light text on the button */
+}
+
+/* Adjust the select dropdown in the popup for night mode */
+[data-theme="dark"] .popup-content select {
+    background-color: #444 !important; /* Darker dropdown background */
+    color: #f5f5f5 !important; /* Light text in the dropdown */
 }
 
 h1, h2 {
