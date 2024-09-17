@@ -1,7 +1,7 @@
 let size, puzzle, timer, moveCounter, time, moves, interval;
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Theme toggle
+    // Theme toggle functionality
     const themeToggle = document.getElementById("theme-toggle");
     const currentTheme = localStorage.getItem("theme") || "light";
     document.documentElement.setAttribute("data-theme", currentTheme);
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("theme", theme);
     });
 
-    // Smooth scrolling for navigation
+    // Smooth scrolling for navigation links
     const links = document.querySelectorAll('nav a');
     links.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Interactive project cards
+    // Dropdown toggle for project details
     document.querySelectorAll('.dropdown-btn').forEach(button => {
         button.addEventListener('click', function() {
             const projectId = this.getAttribute('data-target');
@@ -37,7 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('backToTop').addEventListener('click', scrollToTop);
 });
 
-// Ensure no unintended calls to openSlidingPuzzle
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Open and close the sliding puzzle pop-up
 function openSlidingPuzzle() {
     document.getElementById('popup').style.display = 'block';
 }
@@ -47,7 +51,7 @@ function closeSlidingPuzzle() {
     clearInterval(interval); // Stop the timer when the popup is closed
 }
 
-// Start the game and set up the puzzle
+// Start the sliding puzzle game
 function startGame() {
     size = parseInt(document.getElementById('size').value);
     puzzle = generatePuzzle(size);
@@ -64,6 +68,7 @@ function startGame() {
     renderPuzzle();
 }
 
+// Update the timer display
 function updateTimerDisplay() {
     const hours = Math.floor(time / 3600).toString().padStart(2, '0');
     const minutes = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
@@ -71,6 +76,7 @@ function updateTimerDisplay() {
     document.getElementById('timer').textContent = `${hours}:${minutes}:${seconds}`;
 }
 
+// Generate the puzzle tiles
 function generatePuzzle(size) {
     const tiles = Array.from({ length: size * size }, (_, i) => i + 1);
     tiles[size * size - 1] = 0; // Blank tile
@@ -80,6 +86,7 @@ function generatePuzzle(size) {
     return tiles;
 }
 
+// Shuffle the puzzle array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -87,6 +94,7 @@ function shuffleArray(array) {
     }
 }
 
+// Check if the puzzle is solvable
 function isSolvable(tiles) {
     let inversions = 0;
     for (let i = 0; i < tiles.length - 1; i++) {
@@ -100,6 +108,7 @@ function isSolvable(tiles) {
     return (size % 2 === 1 && inversions % 2 === 0) || (size % 2 === 0 && (inversions + blankRow) % 2 === 1);
 }
 
+// Check if the puzzle is already solved
 function isSolved(tiles) {
     for (let i = 0; i < tiles.length - 1; i++) {
         if (tiles[i] !== i + 1) return false;
@@ -107,6 +116,7 @@ function isSolved(tiles) {
     return true;
 }
 
+// Render the puzzle on the screen
 function renderPuzzle() {
     const container = document.getElementById('puzzleContainer');
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -127,6 +137,7 @@ function renderPuzzle() {
     });
 }
 
+// Move the tile when clicked
 function moveTile(index) {
     const blankIndex = puzzle.indexOf(0);
     const validMoves = [blankIndex - size, blankIndex + size];
@@ -141,6 +152,7 @@ function moveTile(index) {
     }
 }
 
+// Check if the player has won the game
 function checkWin() {
     if (isSolved(puzzle)) {
         clearInterval(interval);
@@ -148,8 +160,4 @@ function checkWin() {
         tiles.forEach(tile => tile.classList.add('finished'));
         document.getElementById('congratulationsMessage').style.display = 'block';
     }
-}
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
