@@ -42,7 +42,7 @@
 <!-- Main Content -->
 <div class="container">
     <!-- About Section -->
-     <section id="about">
+    <section id="about">
         <h2>About Me</h2>
         <p>Hello, world! My name is William Patric Poston, a senior at Old Dominion University pursuing a degree in Computer Science with a minor in Data Science. My passion for technology and innovation has driven me to dive deep into programming, algorithms, and artificial intelligence. I am constantly learning and exploring how software can be used to solve real-world problems.</p>
 
@@ -63,7 +63,7 @@
             <div id="project1" class="dropdown-container hidden">
                 <p>A Java-based sliding puzzle game with multiple difficulty levels and stats tracking.</p>
                 <div class="project-links">
-                    <button id="play-button" class="play-button">Play Game</button>
+                    <button id="play-button" class="play-button">Play Game</button> <!-- Removed inline JavaScript -->
                     <a href="https://github.com/Willpatpost/William-Poston/tree/main/Projects/Sliding%20Puzzle/Code/Main" target="_blank" class="btn">View Source</a>
                     <a href="https://github.com/Willpatpost/William-Poston/blob/main/Projects/Sliding%20Puzzle/Demo/Sliding%20Puzzle.jar" target="_blank" class="btn">Download JAR File</a>
                 </div>
@@ -77,37 +77,51 @@
         <!-- More projects can be added similarly -->
     </section>
 
-    <!-- Popup for Sliding Puzzle -->
-    <div id="popup" class="popup" style="display: none;">
-        <div class="popup-content">
-            <span class="close" onclick="closeSlidingPuzzle()">&times;</span>
-            <h2>Sliding Puzzle Game by William Poston</h2>
-            <label for="size">Select Puzzle Size:</label>
-            <select id="size">
-                <option value="3">3x3</option>
-                <option value="4">4x4</option>
-                <option value="5">5x5</option>
-                <option value="6">6x6</option>
-                <option value="7">7x7</option>
-            </select>
-            <button onclick="startGame()">Play</button>
-            <div id="gameStats">
-                <p>Time: <span id="timer">00:00:00</span></p>
-                <p>Moves: <span id="moveCounter">0</span></p>
-            </div>
-            <div id="puzzleContainer"></div>
-            <p id="congratulationsMessage" style="display:none;">Congratulations! You finished the puzzle.</p>
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <!-- Resume details and download links go here -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me via email or connect with me on social media.</p>
+        <!-- Contact details and social links go here -->
+    </section>
+</div>
+
+<!-- Popup for Sliding Puzzle -->
+<div id="popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <span class="close" onclick="closeSlidingPuzzle()">&times;</span>
+        <h2>Sliding Puzzle Game by William Poston</h2>
+        <label for="size">Select Puzzle Size:</label>
+        <select id="size">
+            <option value="3">3x3</option>
+            <option value="4">4x4</option>
+            <option value="5">5x5</option>
+            <option value="6">6x6</option>
+            <option value="7">7x7</option>
+        </select>
+        <button onclick="startGame()">Play</button>
+        <div id="gameStats">
+            <p>Time: <span id="timer">00:00:00</span></p>
+            <p>Moves: <span id="moveCounter">0</span></p>
         </div>
+        <div id="puzzleContainer"></div>
+        <p id="congratulationsMessage" style="display:none;">Congratulations! You finished the puzzle.</p>
     </div>
+</div>
 
-    <!-- Back to Top Button -->
-    <button onclick="scrollToTop()" id="backToTop">Back to Top</button>
+<!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTop">Back to Top</button>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 William Patric Poston</p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 William Patric Poston</p>
+</footer>
 
-    <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
