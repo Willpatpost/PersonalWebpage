@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Ensure no call to openSlidingPuzzle on page load
+    document.getElementById('play-button').addEventListener('click', openSlidingPuzzle);
+
     // Scroll to Top Button
     document.getElementById('backToTop').addEventListener('click', scrollToTop);
 });
@@ -49,11 +52,12 @@ function openSlidingPuzzle() {
 }
 
 function closeSlidingPuzzle() {
-    document.getElementById('popup').style.display = 'none';
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none'; // Close the pop-up
     clearInterval(interval); // Stop the timer when the popup is closed
 }
 
-// Start the sliding puzzle game
+// Start the sliding puzzle game (no changes)
 function startGame() {
     size = parseInt(document.getElementById('size').value);
     puzzle = generatePuzzle(size);
