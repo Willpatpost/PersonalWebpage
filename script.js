@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Smooth scrolling for the "Learn More" button
+    const learnMoreButton = document.querySelector('.cta-button');
+    learnMoreButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#about').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
     // Dropdown toggle for project details
     document.querySelectorAll('.dropdown-btn').forEach(button => {
         button.addEventListener('click', function() {
