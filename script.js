@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Ensure no call to openSlidingPuzzle on page load
+    // Attach event listener for the play button, ensuring no puzzle opens on load
     document.getElementById('play-button').addEventListener('click', openSlidingPuzzle);
 
     // Scroll to Top Button
@@ -57,7 +57,7 @@ function closeSlidingPuzzle() {
     clearInterval(interval); // Stop the timer when the popup is closed
 }
 
-// Start the sliding puzzle game (no changes)
+// Start the sliding puzzle game (unchanged)
 function startGame() {
     size = parseInt(document.getElementById('size').value);
     puzzle = generatePuzzle(size);
