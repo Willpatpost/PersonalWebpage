@@ -34,6 +34,20 @@ body {
 }
 
 /* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .popup-content {
     background-color: white;
     padding: 20px;
@@ -42,12 +56,11 @@ body {
     max-width: 500px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 0;
 }
 
 [data-theme="dark"] .popup-content {
-    background-color: var(--popup-bg-color); /* Darker background for night mode */
-    color: var(--popup-text-color); /* Lighter text for night mode */
+    background-color: var(--popup-bg-color) !important; /* Force darker background */
+    color: var(--popup-text-color) !important; /* Force lighter text color */
 }
 
 h1, h2 {
