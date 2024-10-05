@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Dropdown toggle for project details
     document.querySelectorAll('.dropdown-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const projectId = this.getAttribute('data-target');
-        const container = document.getElementById(projectId);
-        container.classList.toggle('hidden');
+        button.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-target');
+            const container = document.getElementById(projectId);
+            container.classList.toggle('hidden');
         });
     });
 
@@ -47,9 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Scroll to Top Button
     document.getElementById('backToTop').addEventListener('click', scrollToTop);
-
-    // Initialize stats in localStorage
-    initStats();
 });
 
 function scrollToTop() {
@@ -75,7 +72,6 @@ function startGame() {
     puzzle = generatePuzzle(size);
     time = 0;
     moves = 0;
-    updatePlayCount(size); // Track play count
     updateTimerDisplay();
     document.getElementById('moveCounter').textContent = moves;
     document.getElementById('congratulationsMessage').style.display = 'none';
@@ -178,79 +174,5 @@ function checkWin() {
         const tiles = document.querySelectorAll('.tile');
         tiles.forEach(tile => tile.classList.add('finished'));
         document.getElementById('congratulationsMessage').style.display = 'block';
-        updateBestStats(size, time, moves); // Track best time and moves
-        displayLeaderboard(); // Show leaderboard
     }
-}
-
-// Initialize stats in localStorage
-function initStats() {
-    const sizes = [3, 4, 5, 6, 7];
-    sizes.forEach(size => {
-        if (!localStorage.getItem(`playCount-${size}`)) {
-            localStorage.setItem(`playCount-${size}`, 0);
-            localStorage.setItem(`bestTime-${size}`, Infinity);
-            localStorage.setItem(`bestMoves-${size}`, Infinity);
-        }
-    });
-}
-
-// Update play count
-function updatePlayCount(size) {
-    let count = parseInt(localStorage.getItem(`playCount-${size}`)) || 0;
-    count++;
-    localStorage.setItem(`playCount-${size}`, count);
-}
-
-// Update best time and moves
-function updateBestStats(size, time, moves) {
-    let bestTime = parseInt(localStorage.getItem(`bestTime-${size}`)) || Infinity;
-    let bestMoves = parseInt(localStorage.getItem(`bestMoves-${size}`)) || Infinity;
-
-    if (time < bestTime) {
-        localStorage.setItem(`bestTime-${size}`, time);
-    }
-    if (moves < bestMoves) {
-        localStorage.setItem(`bestMoves-${size}`, moves);
-    }
-}
-
-// Show stats on the leaderboard
-function showStats(size) {
-    let playCount = localStorage.getItem(`playCount-${size}`);
-    let bestTime = localStorage.getItem(`bestTime-${size}`);
-    let bestMoves = localStorage.getItem(`bestMoves-${size}`);
-
-    return `Size: ${size}x${size}, Plays: ${playCount}, Best Time: ${bestTime === 'Infinity' ? 'N/A' : bestTime} sec, Best Moves: ${bestMoves === 'Infinity' ? 'N/A' : bestMoves}`;
-}
-
-function displayLeaderboard() {
-    const leaderboard = document.getElementById('leaderboard-list');
-    leaderboard.innerHTML = ''; // Clear existing leaderboard
-
-    [3, 4, 5, 6, 7].forEach(size => {
-        const row = document.createElement('tr');
-
-        let playCount = localStorage.getItem(`playCount-${size}`) || 0;
-        let bestTime = localStorage.getItem(`bestTime-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestTime-${size}`);
-        let bestMoves = localStorage.getItem(`bestMoves-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestMoves-${size}`);
-
-        if (!playCount) playCount = 0;
-        if (!bestTime) bestTime = 'N/A';
-        if (!bestMoves) bestMoves = 'N/A';
-
-        row.innerHTML = `
-            <td>${size}x${size}</td>
-            <td>${playCount}</td>
-            <td>${bestTime}</td>
-            <td>${bestMoves}</td>
-        `;
-        leaderboard.appendChild(row);
-    });
-}
-
-// Call this on initialization to ensure the table shows "N/A" for empty values
-initStats();
-displayLeaderboard();
-
 }
