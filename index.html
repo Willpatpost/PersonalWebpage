@@ -65,8 +65,19 @@
             <div id="project1" class="dropdown-container hidden">
                 <div id="leaderboard">
                     <h3>Leaderboard</h3>
-                    <ul id="leaderboard-list"></ul>
-                </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Plays</th>
+                                <th>Best Time (sec)</th>
+                                <th>Best Moves</th>
+                            </tr>
+                        </thead>
+                    <tbody id="leaderboard-list">
+                    </tbody>
+                    </table>
+            </div>
                 <p>A Java-based sliding puzzle game with multiple difficulty levels and stats tracking.</p>
                 <div class="project-links">
                     <button id="play-button" class="play-button">Play Game</button> <!-- Removed inline JavaScript -->
