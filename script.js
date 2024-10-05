@@ -227,11 +227,17 @@ function showStats(size) {
 function displayLeaderboard() {
     const leaderboard = document.getElementById('leaderboard-list');
     leaderboard.innerHTML = ''; // Clear existing leaderboard
+
     [3, 4, 5, 6, 7].forEach(size => {
         const row = document.createElement('tr');
-        const playCount = localStorage.getItem(`playCount-${size}`) || 0;
-        const bestTime = localStorage.getItem(`bestTime-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestTime-${size}`);
-        const bestMoves = localStorage.getItem(`bestMoves-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestMoves-${size}`);
+
+        let playCount = localStorage.getItem(`playCount-${size}`) || 0;
+        let bestTime = localStorage.getItem(`bestTime-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestTime-${size}`);
+        let bestMoves = localStorage.getItem(`bestMoves-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestMoves-${size}`);
+
+        if (!playCount) playCount = 0;
+        if (!bestTime) bestTime = 'N/A';
+        if (!bestMoves) bestMoves = 'N/A';
 
         row.innerHTML = `
             <td>${size}x${size}</td>
@@ -243,7 +249,7 @@ function displayLeaderboard() {
     });
 }
 
-// Call this function after initializing stats
+// Call this on initialization to ensure the table shows "N/A" for empty values
 initStats();
 displayLeaderboard();
 
