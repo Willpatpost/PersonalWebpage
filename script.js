@@ -224,13 +224,27 @@ function showStats(size) {
     return `Size: ${size}x${size}, Plays: ${playCount}, Best Time: ${bestTime === 'Infinity' ? 'N/A' : bestTime} sec, Best Moves: ${bestMoves === 'Infinity' ? 'N/A' : bestMoves}`;
 }
 
-// Display leaderboard
 function displayLeaderboard() {
     const leaderboard = document.getElementById('leaderboard-list');
     leaderboard.innerHTML = ''; // Clear existing leaderboard
     [3, 4, 5, 6, 7].forEach(size => {
-        const statItem = document.createElement('li');
-        statItem.textContent = showStats(size);
-        leaderboard.appendChild(statItem);
+        const row = document.createElement('tr');
+        const playCount = localStorage.getItem(`playCount-${size}`) || 0;
+        const bestTime = localStorage.getItem(`bestTime-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestTime-${size}`);
+        const bestMoves = localStorage.getItem(`bestMoves-${size}`) === 'Infinity' ? 'N/A' : localStorage.getItem(`bestMoves-${size}`);
+
+        row.innerHTML = `
+            <td>${size}x${size}</td>
+            <td>${playCount}</td>
+            <td>${bestTime}</td>
+            <td>${bestMoves}</td>
+        `;
+        leaderboard.appendChild(row);
     });
+}
+
+// Call this function after initializing stats
+initStats();
+displayLeaderboard();
+
 }
