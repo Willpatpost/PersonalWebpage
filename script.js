@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Dropdown toggle for project details
     document.querySelectorAll('.dropdown-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const projectId = this.getAttribute('data-target');
-            const container = document.getElementById(projectId);
-            container.classList.toggle('hidden');
+    button.addEventListener('click', function() {
+        const projectId = this.getAttribute('data-target');
+        const container = document.getElementById(projectId);
+        container.classList.toggle('hidden');
         });
     });
 
