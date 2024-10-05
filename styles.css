@@ -461,28 +461,6 @@ footer {
     justify-content: center;
 }
 
-/*Sliding Puzzle Leaderboard*/
-#leaderboard {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-}
-
-#leaderboard table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#leaderboard th, #leaderboard td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#leaderboard th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .hero h1 {
