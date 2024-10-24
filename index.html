@@ -43,7 +43,7 @@
 
 <!-- Main Content -->
 <div class="container">
-    <!-- About Section -->
+<!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
         <p>Hello, world! My name is William Poston, a senior at Old Dominion University pursuing a degree in Computer Science with a minor in Data Science. My passion for technology and innovation has driven me to dive deep into programming, algorithms, and artificial intelligence. I am constantly learning and exploring how software can be used to solve real-world problems.</p>
@@ -55,11 +55,11 @@
         <p>Looking forward, my long-term goal is to establish myself as a software engineer, focusing on either quantum computing or the finance sector. Both of these fields excite me due to their complexity and potential for impactful innovation. Whether it’s building full-stack applications or engineering new computational systems, I am eager to contribute to cutting-edge technologies that shape the future.</p>
     </section>
 
-    <!-- Projects Section -->
+<!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
 
-        <!-- Sliding Puzzle Project -->
+<!-- Sliding Puzzle Project -->
         <div class="project">
             <button class="dropdown-btn" data-target="project1">Sliding Puzzle Game</button>
             <div id="project1" class="dropdown-container hidden">
@@ -76,7 +76,54 @@
             </div>
         </div>
 
-        <!-- More projects can be added similarly -->
+<!-- Popup for Sliding Puzzle -->
+        <div id="popup" class="popup" style="display: none;">
+            <div class="popup-content">
+                <span class="close" onclick="closeSlidingPuzzle()">&times;</span>
+                <h2>Sliding Puzzle Game by William Poston</h2>
+                <label for="size">Select Puzzle Size:</label>
+                <select id="size">
+                    <option value="3">3x3</option>
+                    <option value="4">4x4</option>
+                    <option value="5">5x5</option>
+                    <option value="6">6x6</option>
+                    <option value="7">7x7</option>
+                </select>
+                <button onclick="startGame()">Play</button>
+                <div id="gameStats">
+                    <p>Time: <span id="timer">00:00:00</span></p>
+                    <p>Moves: <span id="moveCounter">0</span></p>
+                </div>
+                <div id="puzzleContainer"></div>
+                <p id="congratulationsMessage" style="display:none;">Congratulations! You finished the puzzle.</p>
+            </div>
+        </div>
+
+<!-- Movie Recommender Project Section -->
+        <div class="project">
+            <button class="dropdown-btn" data-target="movieProjectSection">Movie Recommender</button>
+            <div id="movieProjectSection" class="dropdown-container hidden">
+                <p>This project is a movie recommendation system that uses a dataset to suggest similar movies based on a given title. It leverages content-based filtering and cosine similarity to find movies with similar genres, cast, and keywords.</p>
+                <div class="project-links">
+                    <button onclick="openMovieRecommender()" class="btn">Use Movie Recommender</button>
+                    <a href="https://github.com/Willpatpost/Movie-Recommender" target="_blank" class="btn">View Source</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Popup for Movie Recommender -->
+        <div id="moviePopup" class="popup" style="display: none;">
+            <div class="popup-content">
+                <span class="close" onclick="closeMovieRecommender()">&times;</span>
+                <h2>Movie Recommender</h2>
+                <label for="movieTitle">Enter a movie title:</label>
+                <input type="text" id="movieTitle" placeholder="Enter a movie title">
+                <button id="recommendBtn" class="btn">Recommend</button>
+                <div id="results"></div>
+            </div>
+        </div>
+
+<!-- More projects can be added similarly -->
         
     </section>
 
@@ -94,66 +141,52 @@
 <section id="contact">
     <h2>Contact</h2>
     <p>If you'd like to get in touch, feel free to reach out via email or connect with me on LinkedIn.</p>
+<!-- Email -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/Gmail_logo.png?raw=true" alt="Email" style="width:30px;height:30px;vertical-align:middle;">
         <a href="mailto:willpatpost@gmail.com">Email</a>
     </p>
+<!-- LinkedIn -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/LinkedIn%20Logo.png?raw=true" alt="LinkedIn" style="width:30px;height:30px;vertical-align:middle;">
         <a href="https://www.linkedin.com/in/william-poston" target="_blank">LinkedIn</a>
     </p>
+<!-- GitHub -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/GitHub%20logo.png?raw=true" alt="GitHub" style="width:30px;height:30px;vertical-align:middle;">
         <a href="https://github.com/Willpatpost" target="_blank">GitHub</a>
     </p>
+<!-- Leetcode -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/LeetCode.png?raw=true" alt="LeetCode" style="width:72px;height:30px;vertical-align:middle;">
         <a href="https://leetcode.com/u/willpatpost/" target="_blank">LeetCode</a>
     </p>
+<!-- Instagram -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/Instagram%20logo.png?raw=true" alt="Instagram" style="width:30px;height:30px;vertical-align:middle;">
         <a href="https://www.instagram.com/willlpatpost/" target="_blank">Instagram</a>
     </p>
+<!-- Facebook -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/Facebook%20logo.png?raw=true" alt="Facebook" style="width:72px;height:30px;vertical-align:middle;">
         <a href="https://www.facebook.com/william.poston.3363" target="_blank">Facebook</a>
     </p>
+<!-- Twitter -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/X_logo.png?raw=true" alt="X" style="width:30px;height:30px;vertical-align:middle;">
         <a href="https://x.com/Willpatpost" target="_blank">X/Twitter</a>
     </p>
+<!-- YouTube -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/YouTube_Logo.png?raw=true" alt="YouTube" style="width:72px;height:30px;vertical-align:middle;">
         <a href="https://www.youtube.com/channel/UCaZG-RuCnBDYka4JEtVXBhQ" target="_blank">YouTube</a>
     </p>
+<!-- Chess.com -->
     <p>
         <img src="https://github.com/Willpatpost/William-Poston/blob/main/Images/For%20Webpage/Logos/Chess%20logo.png?raw=true" alt="Chess" style="width:72px;height:30px;vertical-align:middle;">
         <a href="https://www.chess.com/member/willpatpost" target="_blank">Chess.com</a>
     </p>
 </section>
-</div>
-
-<!-- Popup for Sliding Puzzle -->
-<div id="popup" class="popup" style="display: none;">
-    <div class="popup-content">
-        <span class="close" onclick="closeSlidingPuzzle()">&times;</span>
-        <h2>Sliding Puzzle Game by William Poston</h2>
-        <label for="size">Select Puzzle Size:</label>
-        <select id="size">
-            <option value="3">3x3</option>
-            <option value="4">4x4</option>
-            <option value="5">5x5</option>
-            <option value="6">6x6</option>
-            <option value="7">7x7</option>
-        </select>
-        <button onclick="startGame()">Play</button>
-        <div id="gameStats">
-            <p>Time: <span id="timer">00:00:00</span></p>
-            <p>Moves: <span id="moveCounter">0</span></p>
-        </div>
-        <div id="puzzleContainer"></div>
-        <p id="congratulationsMessage" style="display:none;">Congratulations! You finished the puzzle.</p>
-    </div>
 </div>
 
 <!-- Back to Top Button -->
