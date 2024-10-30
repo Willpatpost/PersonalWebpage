@@ -461,22 +461,30 @@ footer {
     justify-content: center;
 }
 
-/* Responsive Styles */
+/* General responsive styling */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
+    /* Stack sections vertically and adjust paddings/margins */
+    .container, .hero-content {
+        padding: 10px;
+        text-align: center;
     }
 
-    .hero p {
-        font-size: 18px;
+    /* Adjust button and text sizes */
+    .btn, .play-button {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 
+    /* Resize images and alignments */
+    .project-images img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Navigation styling */
     nav ul {
         flex-direction: column;
-    }
-
-    .project-images img {
-        width: 80%;
+        padding: 0;
     }
 }
 
@@ -565,4 +573,19 @@ footer {
 
 .project .btn:hover {
     background-color: var(--button-hover-bg);  /* Hover effect */
+}
+
+.play-button {
+    background-color: var(--button-bg-color); /* Red background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: var(--button-hover-bg); /* Hover effect */
 }
